@@ -1,7 +1,4 @@
-const sqlite = require('sqlite'),
-      Sequelize = require('sequelize'),
-      request = require('request'),
-      express = require('express'),
+const express = require('express'),
       path = require('path'),
       app = express(),
       films = require('./routes/film');
@@ -16,4 +13,10 @@ const { PORT=3001, NODE_ENV='development'} = process.env;
   // ROUTES
   app.use('/films', films);
 
+  app.get('*', unimplementedHandler);
+
+  //Handles unimplemented routes
+  function unimplementedHandler(req, res){
+    res.status(504).send('Route is not implemented')
+  }
 module.exports = app;
