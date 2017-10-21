@@ -19,13 +19,17 @@ const db  = require('../models'),
     }
 
     function getFilm(req, res){
-      db.Film.findById(req.params.id).then((filmObj) => {
-        if(filmObj == null){
-          res.send({"msg":"Film not found"});
-        }else{
-          getRecommendations(filmObj,req, res);
-        }
-      });
+      db.Film.findById(req.params.id)
+        .then((filmObj) => {
+          if(filmObj == null){
+            res.send({"msg":"Film not found"});
+          }else{
+            getRecommendations(filmObj,req, res);
+          }
+        })
+        .catch((err) => {
+          res.status(404).send({"message":err});
+        });
     }
 
     function getRecommendations(filmObj,req, res){
@@ -50,6 +54,9 @@ const db  = require('../models'),
             order: db.Film.id
           }).then((films) => {
             getReviews(films, res);
+          })
+          .catch((err) => {
+            res.status(404).send({"message":err});
           });
         }  
     }
@@ -91,13 +98,13 @@ const db  = require('../models'),
                 res.status(200).json(newList);
               }
               else{
-                res.status(404).send({"msg":"No Recommendation found with at least 4.0 average rating and within 15 years"});
+                res.status(404).send({"message":"No Recommendation found with at least 4.0 average rating and within 15 years"});
               }
           }
           
         })
-        .catch(function (err) {
-          res.status(404).send({"ErrorMsg":err});
+        .catch((err) => {
+          res.status(404).send({"message":err});
         });
       });
 

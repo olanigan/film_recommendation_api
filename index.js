@@ -8,7 +8,11 @@ const { PORT=3001, NODE_ENV='development'} = process.env;
   // START SERVER
   Promise.resolve()
   .then(() => app.listen(PORT, () => console.log(`App listening on port ${PORT}`)))
-  .catch((err) => { if (NODE_ENV === 'development') console.error(err.stack); });
+  .catch((err) => { 
+    if (NODE_ENV === 'development') console.error(err.stack);
+    else{
+      res.status(404).send({"message":err});
+    } });
 
   // ROUTES
   app.use('/films', films);
