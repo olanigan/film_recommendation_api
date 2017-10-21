@@ -18,8 +18,9 @@
   },
   "dependencies": {
     "express": "^4.14.0",
+    "moment": "^2.19.1",
     "request": "^2.79.0",
-    "sequelize": "^3.29.0",
+    "sequelize": "^4.13.5",
     "sqlite": "^2.2.3"
   },
   "engines": {
