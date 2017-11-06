@@ -96,7 +96,3 @@ The FreshPotatoes API service will be separate from their customer-facing web ap
 * Once you’ve cloned, install the node modules: `$ npm install`
 * Then, run your application:  `$ npm start`
 * To run integration tests, run: `$ npm test`
-
-#### Licensing
-All content is licensed under a CC­BY­NC­SA 4.0 license.
-All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
