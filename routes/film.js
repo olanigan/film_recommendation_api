@@ -8,7 +8,7 @@ const db  = require('../models'),
       Op = Sequelize.Op,
       moment = require('moment'),
       _ = require('underscore'),
-      reviewsApi = 'http://credentials-api.generalassemb.ly/4576f55f-c427-4cfc-a11c-5bfe914ca6c1?films=';
+      reviewsApi = '';
 
     //ROUTES
     router.get('/:id/recommendations',  getFilmRecommendations);

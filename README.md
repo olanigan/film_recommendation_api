@@ -1,47 +1,5 @@
 # <img src="https://potatoes.ahdb.org.uk/sites/default/files/150824_Potato_4PRINT-Kindred-v1-A5%20cropped.jpg" width="40px"> FreshPotatoes.com
 
-## Overview
-
-FreshPotatoes.com is a wiki-based website for films and artists.  
-
-The FreshPotatoes team has defined a RESTful API endpoint they want you to build. The endpoint will allow external partners, like Netflix, to access FreshPotato artist and film data.
-
-In this README, you'll find information about:
-
-* [What to build](#what-to-build)
-  * [API Specifications](#api-specifications)
-* [Technologies to use](#freshpotatoes-technologies)
-* [What to turn in](#what-to-turn-in)
-* [How to submit your work](#how-to-submit-your-work)
-
----
-
-## What To Build
-
-Build a recommendations API endpoint that retrieves top-rated film recommendations.  You have been given a suite of failing tests - make them pass.
-
-#### User Story
-
-*"As a developer, who doesn't work for FreshPotatoes, I want to use the FreshPotatoes API to get a list of recommended films related to one film."*
-
-#### Acceptance Criteria
-
-1) Recommended films must have:
-  * The same genre as the parent film
-  * A minimum of 5 reviews
-  * An average rating greater than 4.0
-  * Been released within 15 years, before or after the parent film
-  * A sort order based on film id (order by film id)
-
-2) The application should allow developers to:
-  * Paginate by offset
-  * Limit the number of returned records
-
-3) The application should handle for:
-  * Client/server failure
-  * Missing routes
-
----
 
 ## API Specifications
 
@@ -138,52 +96,6 @@ The FreshPotatoes API service will be separate from their customer-facing web ap
 * Once you’ve cloned, install the node modules: `$ npm install`
 * Then, run your application:  `$ npm start`
 * To run integration tests, run: `$ npm test`
-
-#### Database
-
-The database schema is also provided via entity-relationship diagram. To interact with the database: `$ sqlite3 db/database.db`.
-
-<p align="center">
-  <img src="https://i.imgur.com/eAuzbPZ.png">
-</p>
-
-
-#### Third-Party API
-
-The FreshPotatoes database has been developed using film data from a third-party service where fans can write reviews about their favorite movies.  
-
-As part of this project, you must use this API to access film review data.  The third-party API is documented [here](third-party-api.md).
-
-#### Relevant Documentation
-
-* [Node.js v6](https://nodejs.org/dist/latest-v6.x/docs/api/)
-* [ExpressJS API](http://expressjs.com/en/4x/api.html)
-* [SQLite](https://www.sqlite.org/docs.html)
-* [NPM sqlite package](https://www.npmjs.com/package/sqlite)
-* [Sequelize](http://docs.sequelizejs.com/en/v3/)
-* [Request docs](https://github.com/request/request)
-* [Third-Party API](third-party-api.md)
-
----
-
-## What To Turn In
-
-The FreshPotatoes tech team will look for:
-
-* **A git repository** - Once you've downloaded the codebase, initiate a git repository.  As you work, make logical, frequent commits and descriptive commit messages.
-
-* **Production-level code**. - As you implement your solution, think about maintainability, extensibility, security, and performance.
-
-* **Consistent code**. To the best of your abilities, adhere to the [styleguide](styleguide.md) provided.
-
----
-
-## How To Submit Your Work
-
-Create a public Dropbox or Google Drive folder with your work and email the folder URL to
-<a href="mailto:credentials@ga.co">credentials@ga.co</a>.  In the subject line, include your name and the company's name, if applicable.
-
----
 
 #### Licensing
 All content is licensed under a CC­BY­NC­SA 4.0 license.
